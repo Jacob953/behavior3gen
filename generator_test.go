@@ -35,5 +35,5 @@ func TestGenerator(t *testing.T) {
 		},
 	}
 	g.GenerateModelFrom(node)
-	assert.Equal(t, exp, g.model)
+	assert.Equal(t, exp, g.Model)
 }

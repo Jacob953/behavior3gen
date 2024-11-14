@@ -24,7 +24,7 @@ func NewGenerator(cfg Config) *Generator {
 type Generator struct {
 	Config
 	Data  map[string]*genInfo
-	model []*generate.NodeMeta
+	Model []*generate.NodeMeta
 }
 
 func (g *Generator) GenerateModelFrom(node map[string]core.IBaseNode) {
@@ -33,7 +33,7 @@ func (g *Generator) GenerateModelFrom(node map[string]core.IBaseNode) {
 		if err != nil {
 			panic(err)
 		}
-		g.model = append(g.model, s)
+		g.Model = append(g.Model, s)
 	}
 }
 
