@@ -21,3 +21,19 @@ func NewComposite(desc string) (res core.Composite) {
 	}
 	return
 }
+
+func NewCondition(desc string) (res core.Condition) {
+	err := generate.SetBaseNodePrivate(&res.BaseNode, desc, b3.CONDITION)
+	if err != nil {
+		panic(err)
+	}
+	return
+}
+
+func NewDecorator(desc string) (res core.Decorator) {
+	err := generate.SetBaseNodePrivate(&res.BaseNode, desc, b3.DECORATOR)
+	if err != nil {
+		panic(err)
+	}
+	return
+}
