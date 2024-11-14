@@ -18,6 +18,7 @@ func NewGenerator(cfg Config) *Generator {
 	return &Generator{
 		Config: cfg,
 		Data:   make(map[string]*genInfo),
+		Model:  make([]*generate.NodeMeta, 0),
 	}
 }
 
