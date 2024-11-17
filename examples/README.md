@@ -14,4 +14,4 @@ Execute the following command:
 go run main.go
 ```
 
-The generated content will be output to Stdout. Additionally, a new file, config/node.b3, will be created.
+The generated content will be output to Stdout. Additionally, a new file, `config/node.b3`, will be created such as `node.b3`.

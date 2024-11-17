@@ -1,0 +1,26 @@
+[
+  {
+    "version": "0.3.0",
+    "scope": "node",
+    "name": "ActionNode",
+    "category": "action",
+    "title": "ActionNode(<prefix>, <duration>)",
+    "description": "this is description of action",
+    "properties": {
+      "duration": "duration-action",
+      "prefix": "prefix-action"
+    }
+  },
+  {
+    "version": "0.3.0",
+    "scope": "node",
+    "name": "CONDITION_NODE",
+    "category": "condition",
+    "title": "ConditionNode(<prefix>, <limit>)",
+    "description": "this is description of condition\nmore information of condition",
+    "properties": {
+      "limit": "limit-condition",
+      "prefix": "prefix-condition"
+    }
+  }
+]
