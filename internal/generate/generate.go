@@ -18,11 +18,10 @@ type NodeMeta struct {
 	Properties  map[string]any `json:"properties"`
 }
 
-func GetMetaFromObject(name string, node core.IBaseNode, cfg *model.Config) (res *NodeMeta, err error) {
+func GetMetaFromObject(node core.IBaseNode, cfg *model.Config) (res *NodeMeta, err error) {
 	res = &NodeMeta{
 		Version:    cfg.Version,
 		Scope:      "node",
-		Name:       name,
 		Properties: make(map[string]any),
 	}
 	v := reflect.ValueOf(node).Elem()
@@ -36,7 +35,9 @@ func GetMetaFromObject(name string, node core.IBaseNode, cfg *model.Config) (res
 		tags = append(tags, fmt.Sprintf("<%s>", tag))
 		res.Properties[tag] = v.Field(i).Interface()
 	}
+	res.Name = v.Type().Name()
 	res.Title = fmt.Sprintf("%s(%s)", v.Type().Name(), strings.Join(tags, ", "))
+	// reflect to set private members of BaseNode
 	baseNodeField := v.FieldByName("BaseNode")
 	if !baseNodeField.IsValid() {
 		return nil, fmt.Errorf("no BaseNode")
